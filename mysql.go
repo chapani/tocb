@@ -5,7 +5,7 @@ import(
   "database/sql"
   _ "github.com/go-sql-driver/mysql"
   "github.com/spf13/viper"
-  "github.com/buriwoy/sue"
+  "github.com/chapani/sue"
   "gopkg.in/couchbase/gocb.v1"
 )
 
