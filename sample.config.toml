@@ -1,0 +1,83 @@
+# A sample TOML config file for sofa.
+
+
+#=====================================================================
+# couchbase data
+#---------------------------------------------------------------------
+
+[couchbase]
+
+# "localhost" or IP
+host = "localhost"
+
+# bucket name
+bucket = "bucketName"  
+
+# bucket password
+password = "bucketPassword"  
+
+
+
+
+#=====================================================================
+# handler type
+#---------------------------------------------------------------------
+
+# source database type
+handler = "mysql"
+
+
+
+
+#=====================================================================
+# MySQL data
+#---------------------------------------------------------------------
+
+[mysql]
+
+# "localhost" or IP
+host = "localhost"
+
+# mysql username
+user = "userName"  
+
+# mysql user password
+password = "password"  
+
+# mysql database name
+dbname = "databaseName"  
+
+
+
+
+#=====================================================================
+# query objects. Multiple queries are allowed
+#---------------------------------------------------------------------
+
+# first sql query object
+[[query]]
+
+  # sql query
+  sql = "SELECT * FROM articles LIMIT 100"
+
+  # additional optional properties to add to each document
+  # (string | integer | float | boolean) are allowed
+  [query.props]
+    type = "article"
+    author = "johndoe"
+    weight = 0.9
+
+
+# another sql query object
+[[query]]
+
+  # sql query
+  sql = "SELECT * FROM posts LIMIT 100"
+
+  # additional optional properties to add to each document
+  # (string | integer | float | boolean) are allowed
+  [query.props]
+    type = "post"
+    author = "johndoe"
+    sticky = true
+
