@@ -83,7 +83,7 @@ func mysqlHandler (vp *viper.Viper, cbBucket *gocb.Bucket) (int, interface{}) {
         if col == nil {
           value = "NULL"
         } else {
-          value = col
+          value = string(col)
         }
         doc[columns[i]] = value
       }
