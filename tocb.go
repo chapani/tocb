@@ -37,9 +37,19 @@ func main () {
     os.Exit(1)
   }
 
-  // run database handler
+  // run mysql handler
   if handler == "mysql" {
     count, err := mysqlHandler(vp, cbBucket)
+    if err != nil {
+      fmt.Println(err)
+      os.Exit(1)
+    }
+    fmt.Printf("Number of documents added: %d\n", count)
+  }
+
+  // run sqlite handler
+  if handler == "sqlite" {
+    count, err := sqliteHandler(vp, cbBucket)
     if err != nil {
       fmt.Println(err)
       os.Exit(1)

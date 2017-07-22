@@ -20,7 +20,7 @@ password = "bucketPassword"
 
 
 #=====================================================================
-# handler type
+# handler type: mysql | sqlite
 #---------------------------------------------------------------------
 
 # source database type
@@ -46,6 +46,18 @@ password = "password"
 
 # mysql database name
 dbname = "databaseName"  
+
+
+
+
+#=====================================================================
+# Sqlite data
+#---------------------------------------------------------------------
+
+[sqlite]
+
+# path to database file
+dbpath = "./sample.db"  
 
 
 
